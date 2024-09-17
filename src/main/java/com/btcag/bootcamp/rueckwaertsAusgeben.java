@@ -10,14 +10,13 @@ public class rueckwaertsAusgeben {
         String result = "";
         int length = zahl.length();
 
-        while (length >= 0){
-            result = result + zahl.charAt(length-1);
+        while (length > 0){
+            char c = zahl.charAt(length-1);
+            result = result + c;
             length--;
         }
 
         System.out.println(""+result);
-
-
 
     }
 }
