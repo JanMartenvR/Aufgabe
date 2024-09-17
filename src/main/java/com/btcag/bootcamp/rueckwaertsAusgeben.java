@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class rueckwaertsAusgeben {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Gebe eine postive ganze Zahl ein:");
+        System.out.println("Bitte Zahl eingeben (String):");
         String zahl = scanner.nextLine();
         String result = "";
         int length = zahl.length();
@@ -17,6 +17,20 @@ public class rueckwaertsAusgeben {
         }
 
         System.out.println(""+result);
+
+        System.out.println("Bitte Zahl eingeben (Long):");
+        long zahl_int = scanner.nextLong();
+        long result_int = zahl_int;
+        long minus = zahl_int * 1000;
+        while (zahl_int != 0){
+            result_int = result_int * 10 + zahl_int % 10;
+            zahl_int /= 10;
+        }
+        long ausgabe = result_int - minus;
+
+        System.out.println(""+ausgabe);
+
+        //Die Eingabe 01234 funktioniert beim String, aber nicht beim Long, da beim Long die 0 nicht mathematisch berücksichtigt wird.
 
     }
 }
