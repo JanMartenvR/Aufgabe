@@ -11,7 +11,7 @@ public class Pidefiniert {
         int k = 0;
 
         while (k <= i){
-            pi = 4 * (1 - );  // Modulo benutzen um gerade und ungerade zu wechseln um +/- zu wechseln
+            pi = 4 * (1 - 1/3);  // Modulo benutzen um gerade und ungerade zu wechseln um +/- zu wechseln
             k++;
 
         }
