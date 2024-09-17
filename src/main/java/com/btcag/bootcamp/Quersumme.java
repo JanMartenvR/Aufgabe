@@ -13,7 +13,7 @@ public class Quersumme {
         while (length > 0){
             char c = zahl.charAt(length-1);
             length--;
-            int x = c - 48;
+            int x = c - 48;         // - 48 Wegen der ASCII-Tabelle
             summe = summe + x;
         }
         System.out.println(""+summe);
