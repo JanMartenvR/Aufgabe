@@ -20,15 +20,13 @@ public class rueckwaertsAusgeben {
 
         System.out.println("Bitte Zahl eingeben (Long):");
         long zahl_int = scanner.nextLong();
-        long result_int = zahl_int;
-        long minus = zahl_int * 1000;
+        long result_int = 0;
         while (zahl_int != 0){
             result_int = result_int * 10 + zahl_int % 10;
             zahl_int /= 10;
         }
-        long ausgabe = result_int - minus;
 
-        System.out.println(""+ausgabe);
+        System.out.println(""+result_int);
 
         //Die Eingabe 01234 funktioniert beim String, aber nicht beim Long, da beim Long die 0 nicht mathematisch berücksichtigt wird.
 
