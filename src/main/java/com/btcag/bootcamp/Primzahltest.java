@@ -12,7 +12,8 @@ public class Primzahltest {
         while (zahl >= i *i){
             while(0 == zahl % i){
                 antwort = true;
-                i = zahl+1;
+                i = zahl;
+                break;
             }
             i++;
         }
