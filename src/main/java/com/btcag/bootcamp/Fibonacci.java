@@ -7,17 +7,17 @@ public class Fibonacci {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Gebe eine Zahl ein:");
         int max = scanner.nextInt();
-        int zahl = 0;
         int zahl_alt = 0;
+        int zahl = 1;
         System.out.println("Fibonaccizahlen bis " + max + ":");
-        System.out.print(zahl+" ");
-        zahl++;
+        System.out.print(zahl_alt+" ");
 
-        while(zahl < max){
+        while(zahl <= max){
 
             System.out.print(zahl+" ");
-            zahl = zahl + zahl_alt;
+            int zahl_aelter = zahl_alt + zahl;
             zahl_alt = zahl;
+            zahl = zahl_aelter;
 
         }
     }
