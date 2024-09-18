@@ -16,7 +16,20 @@ public class ASCIIKunst {
             }
             System.out.println("");
             k++;
-
         }
+        System.out.print("Groesse des Dreiecks:");
+        int dreieck = scanner.nextInt();
+        int d = 0;
+        while (d < dreieck){
+            int h = 0;
+            while (h <= d){
+                System.out.print("*");
+                h++;
+            }
+            System.out.println("");
+            d++;
+        }
+
+
     }
 }
