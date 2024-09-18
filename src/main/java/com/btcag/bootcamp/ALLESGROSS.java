@@ -11,7 +11,7 @@ public class ALLESGROSS {
         int ASCII = 0;
         int i = 0;
         while (length > i){
-            char c = wort.charAt(0+i);
+            char c = wort.charAt(i);
             ASCII = c;
             ASCII = ASCII - 32;
             char out = (char) ASCII;
