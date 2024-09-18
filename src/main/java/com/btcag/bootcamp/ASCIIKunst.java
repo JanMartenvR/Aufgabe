@@ -8,13 +8,13 @@ public class ASCIIKunst {
         System.out.print("Groesse des Vierecks:");
         int i = scanner.nextInt();
         int k = 0;
-        int l = 0;
         while (k < i){
-            while (k < l){
+            int l = 0;
+            while (l < i){
                 System.out.print("*");
-                l--;
+                l++;
             }
-            System.out.print("*");
+            System.out.println("");
             k++;
 
         }
