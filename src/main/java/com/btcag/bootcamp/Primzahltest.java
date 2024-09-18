@@ -7,12 +7,12 @@ public class Primzahltest {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bitte Zahl für den Primetest eingeben (Long):");
         long zahl = scanner.nextLong();
-        boolean antwort = true;
-        long i = 1;
+        boolean antwort = false;
+        long i = 2;
         while (zahl >= i *i){
             while(0 == zahl % i){
-                antwort = false;
-                i = zahl;
+                antwort = true;
+                i = zahl+1;
             }
             i++;
         }
