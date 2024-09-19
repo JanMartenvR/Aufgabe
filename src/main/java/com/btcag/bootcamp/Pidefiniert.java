@@ -6,15 +6,15 @@ public class Pidefiniert {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wie viele Iterationen sollen gemacht werden um Pi zu berechnen?");
-        long i = scanner.nextLong();
+        long input = scanner.nextLong();
         double pi = 4.0;
-        int k = 0;
+        long i = 1;
         double divisor = 3;
         double klammer = 1;
 
-        while (k <= i) {
+        while (i <= input) {
             pi = 4 * (klammer);  // Modulo benutzen um gerade und ungerade zu wechseln um +/- zu wechseln
-            k++;
+            i++;
             while (i % 2 == 0){
                 klammer = klammer - (1 / divisor);
                 break;
@@ -25,9 +25,10 @@ public class Pidefiniert {
             }
             divisor = divisor + 2;
 
+
         }
 
-        System.out.println("Nach " + i + "iterationen wurde Pi  auf den Wert " + pi + "berechnet.");
+        System.out.println("Nach " + input + " Iterationen wurde Pi  auf den Wert " + pi + " berechnet.");
 
     }
 }
