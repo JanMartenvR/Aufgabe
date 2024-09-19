@@ -9,10 +9,21 @@ public class Pidefiniert {
         long i = scanner.nextLong();
         double pi = 4.0;
         int k = 0;
+        double divisor = 3;
+        double klammer = 1;
 
         while (k <= i) {
-            pi = 4 * (1 - 1 / 3);  // Modulo benutzen um gerade und ungerade zu wechseln um +/- zu wechseln
+            pi = 4 * (klammer);  // Modulo benutzen um gerade und ungerade zu wechseln um +/- zu wechseln
             k++;
+            while (i % 2 == 0){
+                klammer = klammer - (1 / divisor);
+                break;
+            }
+            while (i % 2 != 0){
+                klammer = klammer + (1/ divisor);
+                break;
+            }
+            divisor = divisor + 2;
 
         }
 
