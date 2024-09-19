@@ -9,9 +9,13 @@ public class kryptischeZahlen {
         long input = scanner.nextLong();
         System.out.println("Bitte Passwort (ZAHL) eingeben:");
         long passwort = scanner.nextLong();
+        long result = 0;
+
+        while (passwort == input) {
+            result = input;
 
 
-
+        }
 
         System.out.println("Result: " + result);
     }
