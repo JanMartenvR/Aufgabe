@@ -10,12 +10,12 @@ public class ALLESGROSS {
         int length = wort.length();
         int ASCII = 0;
         int i = 0;
-        while (length > i){
+        while (length > i) {
             char c = wort.charAt(i);
             ASCII = c;
             ASCII = ASCII - 32;
             char out = (char) ASCII;
-            System.out.print(out+"");
+            System.out.print(out + "");
             i++;
         }
     }

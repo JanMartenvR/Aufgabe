@@ -11,10 +11,10 @@ public class Divisionscheck {
         int max = scanner.nextInt();
         int i = 0;
         int ausgabe = 0;
-        while (ausgabe < (max - div)){
+        while (ausgabe < (max - div)) {
             ausgabe = div * i;
             i++;
-            System.out.println(""+ausgabe);
+            System.out.println("" + ausgabe);
         }
 
     }

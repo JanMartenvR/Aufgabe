@@ -9,15 +9,15 @@ public class Primzahltest {
         long zahl = scanner.nextLong();
         boolean antwort = false;
         long i = 2;
-        while (zahl >= i *i){
-            while(0 == zahl % i){
+        while (zahl >= i * i) {
+            while (0 == zahl % i) {
                 antwort = true;
                 i = zahl;
                 break;
             }
             i++;
         }
-        System.out.println("Ergebnis: "+antwort);
+        System.out.println("Ergebnis: " + antwort);
 
     }
 }
