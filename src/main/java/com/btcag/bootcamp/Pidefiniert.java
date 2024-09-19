@@ -24,8 +24,6 @@ public class Pidefiniert {
                 break;
             }
             divisor = divisor + 2;
-
-
         }
 
         System.out.println("Nach " + input + " Iterationen wurde Pi  auf den Wert " + pi + " berechnet.");
