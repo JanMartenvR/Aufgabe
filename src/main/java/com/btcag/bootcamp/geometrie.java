@@ -7,7 +7,7 @@ public class geometrie {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bitte ganze Zahl größer als 0 eingeben :");
         int r = scanner.nextInt();
-        double area = 2 * Math.PI * r*r;
+        double area = 3.1416 * r * r;
 
         System.out.println(""+area);
 
