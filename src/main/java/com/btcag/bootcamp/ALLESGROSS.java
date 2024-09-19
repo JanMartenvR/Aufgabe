@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ALLESGROSS {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Gebe ein Wort ein:");
+        System.out.print("Geben Sie ein Wort ein:");
         String wort = scanner.nextLine();
         int length = wort.length();
         int ASCII = 0;
@@ -18,7 +18,5 @@ public class ALLESGROSS {
             System.out.print(out+"");
             i++;
         }
-
-
     }
 }
