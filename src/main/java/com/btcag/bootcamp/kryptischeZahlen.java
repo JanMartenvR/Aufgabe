@@ -11,10 +11,11 @@ public class kryptischeZahlen {
         long passwort = scanner.nextLong();
         long result = 0;
 
+        while (){
+
+        }
         while (passwort == input) {
             result = input;
-
-
         }
 
         System.out.println("Result: " + result);
