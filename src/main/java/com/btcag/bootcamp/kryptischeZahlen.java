@@ -24,7 +24,8 @@ public class kryptischeZahlen {
             input_var /= 10;
         }
 
-        while (passwort == input) {
+        while (input != 0) {
+
             result = input;
         }
 
