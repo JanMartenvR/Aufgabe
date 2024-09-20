@@ -12,11 +12,14 @@ public class kryptischeZahlen {
         long result = 0;
         long input_var = input;
         long passwort_var = passwort;
+        long multiplikator = 1;
 
         while (input_var != 0){
-            result = input_var % 10;
-            long mod = passwort_var % 10;
-            result = result % mod;
+            input_var = input % 10;
+            passwort_var = passwort_var % 10;
+            result = (input_var + passwort_var) % 10;
+            result = result + (result * multiplikator);
+            multiplikator *= 10;
             passwort_var /= 10;
             input_var /= 10;
         }
