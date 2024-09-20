@@ -8,6 +8,7 @@ public class Primfaktor {
         System.out.println("Bitte Zahl für den Primetest eingeben (Long):");
         long zahl = scanner.nextLong();
         long i = 2;
+        System.out.print("Die Zahl "+ zahl +" kann in folgende Faktoren zerlegt werden: ");
         while (i <= zahl){
             while (zahl % i == 0){
                 System.out.print(i + " ");
