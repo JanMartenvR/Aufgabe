@@ -18,8 +18,29 @@ public class Supermarkt {
 
         System.out.println("Wieviel hat der Kunde gegeben (in Cent)? ");
         int bezahlt = scanner.nextInt();
+        int rueckgeld = 0;
+        int zwh = 0;
+        int eih = 0;
+        int fuenfzige = 0;
+        int zwanzige = 0;
+        int zehne = 0;
+        int fuenfe = 0;
+        int zweie = 0;
+        int eine = 0;
+        int fuenfzigc = 0;
+        int zwanzigc = 0;
+        int zehnc = 0;
+        int fuenfc = 0;
+        int zweic = 0;
+        int einc =0;
+        while (summe > 0){
+            while (summe % 200 == 0){
+                zwh = 1;
 
-        System.out.println("Bitte folgendes Geld zurückgeben (" + rückgeld + ")");
+            }
+        }
+
+        System.out.println("Bitte folgendes Geld zurückgeben (" + rueckgeld + ")");
         System.out.println(zwh + " x 200 €");
         System.out.println(eih + " x 100 €");
         System.out.println(fuenfzige + " x 50 €");
