@@ -8,7 +8,7 @@ public class Supermarkt {
         System.out.println("Bitte alle Produkte in Cent eingeben und mit 0 die Liste beenden: ");
         int summe = 0;
         int input = 1;
-        while(input != 0){
+        while (input != 0) {
             input = scanner.nextInt();
             summe += input;
         }
@@ -32,12 +32,13 @@ public class Supermarkt {
         int zehnc = 0;
         int fuenfc = 0;
         int zweic = 0;
-        int einc =0;
-        while (summe > 0){
-            while (summe % 200 == 0){
+        int einc = 0;
+        while (summe > 0) {
+            while (summe % 200 == 0) {
                 zwh = 1;
 
             }
+            summe = summe - rueckgeld;
         }
 
         System.out.println("Bitte folgendes Geld zurückgeben (" + rueckgeld + ")");

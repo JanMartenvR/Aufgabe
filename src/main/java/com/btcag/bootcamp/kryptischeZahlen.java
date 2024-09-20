@@ -14,7 +14,7 @@ public class kryptischeZahlen {
         long passwort_var = passwort;
         long multiplikator = 1;
 
-        while (input_var != 0){
+        while (input_var != 0) {
             input_var = input % 10;
             passwort_var = passwort_var % 10;
             result = (input_var + passwort_var) % 10;
