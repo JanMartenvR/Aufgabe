@@ -9,11 +9,11 @@ public class Supermarkt {
         int summe = 0;
         int input = 1;
         while(input != 0){
-            input = scanner.nextLong();
+            input = scanner.nextInt();
             summe += input;
         }
         int euro = summe / 100;
-        int cent =
-        System.out.println("Die Summe aller Produkte ist ");
+        int cent = summe % 100;
+        System.out.println("Die Summe aller Produkte ist " + euro + " € und " + cent + " Cent.");
     }
 }
