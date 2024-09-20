@@ -7,13 +7,14 @@ public class Primfaktor {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bitte Zahl für den Primetest eingeben (Long):");
         long zahl = scanner.nextLong();
-        int faktor = 0;
         long i = 2;
-
-        // Erst Test ob Primzahl,  dann ob durch folgende primzahlen ohne rest teilbar
-
-        System.out.println("Ergebnis: ");
-
+        while (i <= zahl){
+            while (zahl % i == 0){
+                System.out.print(i + " ");
+                zahl /= i;
+            }
+            i++;
+        }
 
     }
 }
