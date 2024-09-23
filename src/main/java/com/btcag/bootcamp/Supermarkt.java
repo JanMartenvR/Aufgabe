@@ -35,6 +35,7 @@ public class Supermarkt {
         int einc = 0;
 
         rueckgeld = bezahlt - summe;
+        int zurueck = rueckgeld;
         while (rueckgeld >= 20000){
             zwh++;
             rueckgeld -= 20000;
@@ -93,7 +94,7 @@ public class Supermarkt {
         }
 
 
-        System.out.println("Bitte folgendes Geld zurückgeben (" + rueckgeld + ")");
+        System.out.println("Bitte folgendes Geld zurückgeben (" + zurueck + " Cent)");
         System.out.println(zwh + " x 200 €");
         System.out.println(eih + " x 100 €");
         System.out.println(fuenfzige + " x 50 €");
