@@ -16,6 +16,8 @@ public class Subnetting {
         System.out.println("Bitte gebe die Subnetzmaske an: ");
         long subnetz = scanner.nextLong();
 
+        System.out.println("Die Netzadresse ist : " + oktettEins + "." + oktettZwei + "." + oktettDrei + "." + oktettVier);
+
 
     }
 }
