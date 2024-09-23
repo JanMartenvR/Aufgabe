@@ -17,7 +17,8 @@ public class Supermarkt {
         System.out.println("Die Summe aller Produkte ist " + euro + " € und " + cent + " Cent.");
 
         System.out.println("Wieviel hat der Kunde gegeben (in Cent)? ");
-        int bezahlt = scanner.nextInt();
+        String bezahlt = scanner.nextLine();
+        int lenght = bezahlt.length();
         int rueckgeld = 0;
         int zwh = 0;
         int eih = 0;
@@ -34,11 +35,15 @@ public class Supermarkt {
         int zweic = 0;
         int einc = 0;
         while (summe != 0) {
-            summe = summe - bezahlt;
-            while (summe < 0){
-                //vll lieber String input und den zerlegen, dann kann aus der länge direkt hunderter rausgesucht werden.
 
-            }
+
+                //vll lieber String input und den zerlegen, dann kann aus der länge direkt hunderter rausgesucht werden.
+//            while (length > 0){
+//            char c = zahl.charAt(length-1);
+//            result = result + c;
+//            length--;
+//        }
+
         }
 
         System.out.println("Bitte folgendes Geld zurückgeben (" + rueckgeld + ")");
