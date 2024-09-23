@@ -13,58 +13,60 @@ public class Zahlenraten {
         int input = 1000000;
         int x = 0;
         int y = 0;
-        while (bits == 8){
+        while (bits == 8) {
             y = 255;
             bits++;
         }
-        while (bits == 7){
+        while (bits == 7) {
             y = 127;
             bits++;
         }
-        while (bits == 6){
+        while (bits == 6) {
             y = 63;
             bits++;
         }
-        while (bits == 5){
+        while (bits == 5) {
             y = 31;
             bits++;
         }
-        while (bits == 4){
+        while (bits == 4) {
             y = 15;
             bits++;
         }
-        while (bits == 3){
+        while (bits == 3) {
             y = 7;
             bits++;
         }
-        while (bits == 2){
+        while (bits == 2) {
             y = 3;
             bits++;
         }
-        while (bits == 1){
+        while (bits == 1) {
             y = 1;
             bits++;
         }
 
         int i = 1;
         while (input != number) {
-            System.out.println(i + ". Versuch: Bitte eine Zahl im Bereich von " + x + " bis " + y+ " eingeben:");
+            System.out.println(i + ". Versuch: Bitte eine Zahl im Bereich von " + x + " bis " + y + " eingeben:");
             input = scanner.nextInt();
             i++;
+
             int schleifencontrolle = 1;
             int diff = number - input;
 
-            while (diff * schleifencontrolle > 0){
+            while (diff * schleifencontrolle > 0) {
                 System.out.println("Die gesuchte Zahl ist größer.");
                 schleifencontrolle = 0;
             }
-            while (diff * schleifencontrolle < 0){
+            while (diff * schleifencontrolle < 0) {
                 System.out.println("Die gesuchte Zahl ist kleiner.");
                 schleifencontrolle = 0;
             }
 
         }
-        System.out.println("Super!");
+        i--;
+        System.out.println("Super! Zahl nach " + i + " Versuchen erraten.");
 
     }
 }
