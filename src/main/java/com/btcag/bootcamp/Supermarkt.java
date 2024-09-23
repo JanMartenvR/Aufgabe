@@ -37,6 +37,7 @@ public class Supermarkt {
         while (summe != 0) {
 
 
+
                 //vll lieber String input und den zerlegen, dann kann aus der länge direkt hunderter rausgesucht werden.
 //            while (length > 0){
 //            char c = zahl.charAt(length-1);
