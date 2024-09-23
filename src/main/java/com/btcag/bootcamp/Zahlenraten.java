@@ -48,12 +48,23 @@ public class Zahlenraten {
 
         int i = 1;
         while (input != number) {
-
             System.out.println(i + ". Versuch: Bitte eine Zahl im Bereich von " + x + " bis " + y+ " eingeben:");
             input = scanner.nextInt();
             i++;
+            int schleifencontrolle = 1;
+            int diff = number - input;
+
+            while (diff * schleifencontrolle > 0){
+                System.out.println("Die gesuchte Zahl ist größer.");
+                schleifencontrolle = 0;
+            }
+            while (diff * schleifencontrolle < 0){
+                System.out.println("Die gesuchte Zahl ist kleiner.");
+                schleifencontrolle = 0;
+            }
 
         }
+        System.out.println("Super!");
 
     }
 }
