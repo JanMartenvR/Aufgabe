@@ -33,13 +33,65 @@ public class Supermarkt {
         int fuenfc = 0;
         int zweic = 0;
         int einc = 0;
-        while (summe != 0) {
-            summe = summe - bezahlt;
-            while (summe < 0){
-                //vll lieber String input und den zerlegen, dann kann aus der länge direkt hunderter rausgesucht werden.
 
-            }
+        rueckgeld = bezahlt - summe;
+        while (rueckgeld >= 20000){
+            zwh++;
+            rueckgeld -= 20000;
         }
+        while (rueckgeld >= 10000){
+            eih++;
+            rueckgeld -= 10000;
+        }
+        while (rueckgeld >= 5000){
+            fuenfzige++;
+            rueckgeld -= 5000;
+        }
+        while (rueckgeld >= 2000){
+            zwanzige++;
+            rueckgeld -= 2000;
+        }
+        while (rueckgeld >= 1000){
+            zehne++;
+            rueckgeld -= 1000;
+        }
+        while (rueckgeld >= 500){
+            fuenfe++;
+            rueckgeld -= 500;
+        }
+        while (rueckgeld >= 200){
+            zweie++;
+            rueckgeld -= 200;
+        }
+        while (rueckgeld >= 100){
+            eine++;
+            rueckgeld -= 100;
+        }
+        while (rueckgeld >= 50){
+            fuenfzigc++;
+            rueckgeld -= 50;
+        }
+        while (rueckgeld >= 20){
+            zwanzigc++;
+            rueckgeld -= 20;
+        }
+        while (rueckgeld >= 10){
+            zehnc++;
+            rueckgeld -= 10;
+        }
+        while (rueckgeld >= 5){
+            fuenfc++;
+            rueckgeld -= 5;
+        }
+        while (rueckgeld >= 2){
+            zweic++;
+            rueckgeld -= 2;
+        }
+        while (rueckgeld >= 1){
+            einc++;
+            rueckgeld -= 1;
+        }
+
 
         System.out.println("Bitte folgendes Geld zurückgeben (" + rueckgeld + ")");
         System.out.println(zwh + " x 200 €");
