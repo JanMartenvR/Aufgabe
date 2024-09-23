@@ -33,12 +33,12 @@ public class Supermarkt {
         int fuenfc = 0;
         int zweic = 0;
         int einc = 0;
-        while (summe > 0) {
-            while (summe % 200 == 0) {
-                zwh = 1;
+        while (summe != 0) {
+            summe = summe - bezahlt;
+            while (summe < 0){
+                //vll lieber String input und den zerlegen, dann kann aus der länge direkt hunderter rausgesucht werden.
 
             }
-            summe = summe - rueckgeld;
         }
 
         System.out.println("Bitte folgendes Geld zurückgeben (" + rueckgeld + ")");
