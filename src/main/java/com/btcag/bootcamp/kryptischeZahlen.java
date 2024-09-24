@@ -10,7 +10,14 @@ public class kryptischeZahlen {
         System.out.println("Bitte Passwort (ZAHL) eingeben:");
         long passwort = scanner.nextLong();
 
-        long schluessel = passwort % 10;
+        long querpw = 0;
+        while (passwort > 0) {
+            querpw += passwort % 10;
+            passwort /= 10;
+            querpw = querpw % 10;
+        }
+
+        long schluessel = querpw;
 
         long ergebnis = 0;
         long multiplikator = 1;
