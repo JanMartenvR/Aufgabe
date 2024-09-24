@@ -9,26 +9,27 @@ public class kryptischeZahlen {
         long input = scanner.nextLong();
         System.out.println("Bitte Passwort (ZAHL) eingeben:");
         long passwort = scanner.nextLong();
-        long result = 0;
-        long input_var = input;
-        long passwort_var = passwort;
-        long multiplikator = 1;
 
-        while (input_var != 0) {
-            input_var = input % 10;
-            passwort_var = passwort_var % 10;
-            result = (input_var + passwort_var) % 10;
-            result = result + (result * multiplikator);
-            multiplikator *= 10;
-            passwort_var /= 10;
-            input_var /= 10;
+        long verschluesselt = 0;
+        long multiplikation = 1;
+        //verschlüsselung
+        while (input > 0){
+            long ziffer = input % 10;
+            ziffer = (ziffer + 7) % 10;
+            verschluesselt = verschluesselt + (ziffer * multiplikation);
+            multiplikation *= 10;
+            input /= 10;
         }
-
-        while (input != 0) {
-
-            result = input;
+        System.out.println("Result: " + verschluesselt);
+        long entschluesselt = 0;
+        long multiplkator = 0;
+        while ( input > 0){
+            long ziffer = input % 10;
+            ziffer = (ziffer + 3 ) % 10;
+            entschluesselt = entschluesselt + (ziffer * multiplkator);
+            multiplkator *= 10;
+            input /= 10;
         }
-
-        System.out.println("Result: " + result);
+        System.out.println("Result: " + entschluesselt);
     }
 }
