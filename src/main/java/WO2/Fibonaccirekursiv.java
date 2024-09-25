@@ -13,7 +13,14 @@ public class Fibonaccirekursiv {
 
     }
     public static int fibonacci(int n) {
+        int zahl = 0;
+        if (n >= 0) {
 
-        return fibonacci(n);
+            n--;
+
+            return fibonacci(n);
+        } else {
+            return zahl;
+        }
     }
 }
