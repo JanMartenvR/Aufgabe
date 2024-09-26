@@ -14,6 +14,10 @@ public class VierGewinnt {
         System.out.println("Dein Name wurde als: " + spielerZwei + " registriert.");
 
         printBoard();
+        while (gewinnCheck()){
+            spielzug(spielerEins, spielerZwei);
+            printBoard();
+        }
 
     }
 
@@ -32,6 +36,29 @@ public class VierGewinnt {
                 System.out.print("( )");
             }
             System.out.println();
+        }
+    }
+    public static String spielzug (String spielerEins, String spielerZwei) {
+        Scanner scanner = new Scanner(System.in);
+        int zug = 9999;
+        int player = 1;
+        String name = spielerEins;
+        while (zug >= 7 || zug < 1) {
+            if (player > 0) {
+                name = spielerEins;
+            } else {
+                name = spielerZwei;
+            }
+            player *= -1;
+            System.out.println(name + " in welche Spalte möchten Sie Ihren Spielstein platzieren?");
+            zug = scanner.nextInt();
+        }
+    }
+    public static Boolean gewinnCheck () {
+        if (gewonnen) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
