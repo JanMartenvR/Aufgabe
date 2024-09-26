@@ -14,10 +14,10 @@ public class VierGewinnt {
         System.out.println("Dein Name wurde als: " + spielerZwei + " registriert.");
 
 
-        printBoard();
+        printBoard(genBoard());
         while (gewinnCheck()){
-            spielzug(spielerEins, spielerZwei);
-            printBoard();
+            spielzug(spielerEins, spielerZwei, genBoard());
+            printBoard(genBoard());
         }
 
     }
@@ -31,22 +31,26 @@ public class VierGewinnt {
         }
         return name;
     }
-    public static void printBoard () {
+    public static int[][] genBoard () {
         int[][] board = new int [6][7];
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 board[i][j] = 0;
             }
+            return board;
         }
+        return board;
+    }
+    public static void printBoard (int[][] board) {
         //Gibt Feld aus
-        for (int[] ints : board) {
-            for (int anInt : ints) {
-                System.out.print(anInt + " ");
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                System.out.print(board[i][j] + " ");
             }
             System.out.println();
         }
     }
-    public static String spielzug (String spielerEins, String spielerZwei) {
+    public static String spielzug (String spielerEins, String spielerZwei, int board[][]) {
         Scanner scanner = new Scanner(System.in);
         int zug = 9999;
         int player = 1;
