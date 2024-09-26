@@ -13,6 +13,8 @@ public class VierGewinnt {
         String spielerZwei = registrierung();
         System.out.println("Dein Name wurde als: " + spielerZwei + " registriert.");
 
+        printBoard();
+
     }
 
     public static String registrierung() {
@@ -23,5 +25,13 @@ public class VierGewinnt {
             name = scanner.nextLine();
         }
         return name;
+    }
+    public static void printBoard () {
+        for (int y = 0; y < 6; y++) {
+            for (int x = 0; x < 7; x++) {
+                System.out.print("( )");
+            }
+            System.out.println();
+        }
     }
 }
