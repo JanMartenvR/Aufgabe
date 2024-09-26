@@ -5,26 +5,38 @@ import java.util.Scanner;
 public class VierGewinnt {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Willkommen Spieler 1!");
         String spielerEins = registrierung();
-        int eins = 1;
         System.out.println("Dein Name wurde als: " + spielerEins + " registriert.");
 
         System.out.println("Willkommen Spieler 2!");
         String spielerZwei = registrierung();
-        int zwei = 2;
         System.out.println("Dein Name wurde als: " + spielerZwei + " registriert.");
 
-
-        printBoard(genBoard());
-        if (gewinnCheck(genBoard(), eins)) {
-            System.out.println(spielerEins + " hat gewonnen!");
-        } else if (gewinnCheck(genBoard(), zwei)) {
-            System.out.println(spielerZwei + " hat gewonnen!");
-        } else {
-            spielzug(spielerEins, spielerZwei, genBoard());
-            printBoard(genBoard());
+        int[][] board = new int[6][7];
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                board[i][j] = 0;
+            }
         }
+
+        int spieler = 1;
+        while (true) {
+            printBoard(board);
+            System.out.println(spieler + " in welche Spalte möchten Sie Ihren Spielstein platzieren?");
+            int zug = scanner.nextInt() - 1;
+            spielzug(board, spieler, zug);
+            if (gewinnCheck(board, spieler)) {
+                printBoard(board);
+                System.out.println(spielerEins + " hat gewonnen!");
+                break;
+            }
+
+            spieler = (spieler == 1) ? 2:1;
+
+        }
+
 
     }
 
@@ -38,16 +50,6 @@ public class VierGewinnt {
         return name;
     }
 
-    public static int[][] genBoard() {
-        int[][] board = new int[6][7];
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                board[i][j] = 0;
-            }
-            return board;
-        }
-        return board;
-    }
 
     public static void printBoard(int[][] board) {
         for (int i = 0; i < board.length; i++) {
@@ -58,22 +60,26 @@ public class VierGewinnt {
         }
     }
 
-    public static String spielzug(String spielerEins, String spielerZwei, int board[][]) {
-        Scanner scanner = new Scanner(System.in);
-        int zug = 9999;
-        int player = 1;
-        String name = spielerEins;
-        while (zug >= 7 || zug < 1) {
-            if (player > 0) {
-                name = spielerEins;
-            } else {
-                name = spielerZwei;
-            }
-            player *= -1;
-            System.out.println(name + " in welche Spalte möchten Sie Ihren Spielstein platzieren?");
-            zug = scanner.nextInt();
+    public static int[][] spielzug(int board[][], int player, int zug) {
+
+        if (board[0][zug] == 0) {
+            board[0][zug] = player;
+        } else if (board[1][zug] == 0) {
+            board[1][zug] = player;
+        } else if (board[2][zug] == 0) {
+            board[2][zug] = player;
+        } else if (board[3][zug] == 0) {
+            board[3][zug] = player;
+        } else if (board[4][zug] == 0) {
+            board[4][zug] = player;
+        } else if (board[5][zug] == 0) {
+            board[5][zug] = player;
+        } else {
+            System.out.println("Zug ungültig.");
+            return spielzug(board, player, zug);
         }
-        return "";
+
+        return board;
     }
 
     public static Boolean gewinnCheck(int[][] board, int spieler) {
