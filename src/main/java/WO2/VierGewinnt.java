@@ -13,6 +13,7 @@ public class VierGewinnt {
         String spielerZwei = registrierung();
         System.out.println("Dein Name wurde als: " + spielerZwei + " registriert.");
 
+
         printBoard();
         while (gewinnCheck()){
             spielzug(spielerEins, spielerZwei);
@@ -31,9 +32,16 @@ public class VierGewinnt {
         return name;
     }
     public static void printBoard () {
-        for (int y = 0; y < 6; y++) {
-            for (int x = 0; x < 7; x++) {
-                System.out.print("( )");
+        int[][] board = new int [6][7];
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                board[i][j] = 0;
+            }
+        }
+        //Gibt Feld aus
+        for (int[] ints : board) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }
@@ -53,9 +61,10 @@ public class VierGewinnt {
             System.out.println(name + " in welche Spalte möchten Sie Ihren Spielstein platzieren?");
             zug = scanner.nextInt();
         }
+        return "";
     }
     public static Boolean gewinnCheck () {
-        if (gewonnen) {
+        if (true) { //gewinnbedingung einfügen
             return true;
         } else {
             return false;
