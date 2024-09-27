@@ -87,7 +87,7 @@ public class VierGewinnt {
             board[5][zug] = player;
         } else {
             System.out.println("Zug ungültig.");
-            return spielzug(board, player, zug);
+            return board;
         }
 
         return board;
