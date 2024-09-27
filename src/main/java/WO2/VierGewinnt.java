@@ -29,7 +29,18 @@ public class VierGewinnt {
             spielzug(board, spieler, zug);
             if (gewinnCheck(board, spieler)) {
                 printBoard(board);
-                System.out.println(spielerEins + " hat gewonnen!");
+                String Sieger = "";
+                if (spieler == 1) {
+                    Sieger = spielerEins;
+                } else {
+                    Sieger = spielerZwei;
+                }
+                System.out.println(Sieger + " hat gewonnen!");
+                break;
+            }
+            if (unentschieden(board)) {
+                printBoard(board);
+                System.out.println("Das Spiel endet unentschieden.");
                 break;
             }
 
@@ -80,6 +91,14 @@ public class VierGewinnt {
         }
 
         return board;
+    }
+    public static boolean unentschieden(int[][] board) {
+        for (int j = 0; j < 7; j++) {
+            if (board[5][j] == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static Boolean gewinnCheck(int[][] board, int spieler) {
