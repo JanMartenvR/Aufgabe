@@ -142,3 +142,4 @@ public class VierGewinnt {
         return false;
     }
 }
+ //int[][] board = new int[][]{                {0,0,0,0},                {0},                {0,0},        };
