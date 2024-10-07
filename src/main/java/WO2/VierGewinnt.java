@@ -3,6 +3,17 @@ package WO2;
 import java.util.Scanner;
 
 public class VierGewinnt {
+
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
+
+
     public static int[][] board = new int[6][7];
     public static int spieler = 1;
 
@@ -68,7 +79,7 @@ public class VierGewinnt {
     public static void printBoard(int[][] board) {
         for (int i = board.length - 1; i >= 0; i--) {
             for (int j = 0; j < board[i].length; j++) {
-                System.out.print(board[i][j] + " ");
+                System.out.print("|" + board[i][j] + "|");
             }
             System.out.println();
         }
