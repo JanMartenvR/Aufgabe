@@ -3,6 +3,8 @@ package WO2;
 import java.util.Scanner;
 
 public class VierGewinnt {
+    public static int[][] board = new int[6][7];
+    public static int spieler = 1;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -14,14 +16,8 @@ public class VierGewinnt {
         String spielerZwei = registrierung();
         System.out.println("Dein Name wurde als: " + spielerZwei + " registriert.");
 
-        int[][] board = new int[6][7];
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                board[i][j] = 0;
-            }
-        }
+        feldInitialisieren();
 
-        int spieler = 1;
         while (true) {
             printBoard(board);
             System.out.println(spieler + " in welche Spalte möchten Sie Ihren Spielstein platzieren?");
@@ -49,6 +45,13 @@ public class VierGewinnt {
         }
 
 
+    }
+    public static void feldInitialisieren () {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                board[i][j] = 0;
+            }
+        }
     }
 
     public static String registrierung() {
@@ -87,6 +90,7 @@ public class VierGewinnt {
             board[5][zug] = player;
         } else {
             System.out.println("Zug ungültig.");
+            spieler = (spieler == 1) ? 2:1;
             return board;
         }
 
