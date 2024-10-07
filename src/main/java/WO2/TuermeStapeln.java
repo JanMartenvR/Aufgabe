@@ -2,7 +2,7 @@ package WO2;
 
 import java.util.Scanner;
 
-public class TürmeStapeln {
+public class TuermeStapeln {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Gebe die Höhe der Stapel ein:");
