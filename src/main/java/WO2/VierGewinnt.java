@@ -75,7 +75,13 @@ public class VierGewinnt {
     public static void printBoard(int[][] board) {
         for (int i = board.length - 1; i >= 0; i--) {
             for (int j = 0; j < board[i].length; j++) {
-                System.out.print("|" + board[i][j] + "|");
+                if (board[i][j] == 1) {
+                    System.out.print("|" + ANSI_RED + "1" + ANSI_RESET + "|");
+                } else if (board[i][j] == 2) {
+                    System.out.print("|" + ANSI_BLUE + "2" + ANSI_RESET + "|");
+                } else {
+                    System.out.print("|" + board[i][j] + "|");
+                }
             }
             System.out.println();
         }
