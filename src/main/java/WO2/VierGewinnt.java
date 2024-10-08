@@ -46,13 +46,14 @@ public class VierGewinnt {
                 break;
             }
 
-            spieler = (spieler == 1) ? 2:1;
+            spieler = (spieler == 1) ? 2 : 1;
 
         }
 
 
     }
-    public static void feldInitialisieren () {
+
+    public static void feldInitialisieren() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 board[i][j] = 0;
@@ -97,12 +98,13 @@ public class VierGewinnt {
             board[5][zug] = player;
         } else {
             System.out.println("Zug ungültig.");
-            spieler = (spieler == 1) ? 2:1;
+            spieler = (spieler == 1) ? 2 : 1;
             return board;
         }
 
         return board;
     }
+
     public static boolean unentschieden(int[][] board) {
         for (int j = 0; j < 7; j++) {
             if (board[5][j] == 0) {
@@ -153,4 +155,4 @@ public class VierGewinnt {
         return false;
     }
 }
- //int[][] board = new int[][]{                {0,0,0,0},                {0},                {0,0},        };
+//int[][] board = new int[][]{                {0,0,0,0},                {0},                {0,0},        };
