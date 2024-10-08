@@ -26,7 +26,13 @@ public class VierGewinnt {
 
         while (true) {
             printBoard(board);
-            System.out.println(spieler + " in welche Spalte möchten Sie Ihren Spielstein platzieren?");
+            String tmp = "";
+            if (spieler == 1) {
+                tmp = spielerEins;
+            } else {
+                tmp = spielerZwei;
+            }
+            System.out.println(tmp + " in welche Spalte möchten Sie Ihren Spielstein platzieren?");
             int zug = scanner.nextInt() - 1;
             spielzug(board, spieler, zug);
             if (gewinnCheck(board, spieler)) {
