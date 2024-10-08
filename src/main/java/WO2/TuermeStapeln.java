@@ -20,8 +20,7 @@ public class TuermeStapeln {
     public static int nutzerEingabe() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Gebe die Höhe der Stapel ein:");
-        int hoehe = scanner.nextInt();
-        return hoehe;
+        return scanner.nextInt();
     }
 
     public static void arrayIntialisierung(int hoehe) {
