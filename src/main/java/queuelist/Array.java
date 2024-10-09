@@ -5,12 +5,19 @@ public class Array implements IQueueList{
 
     @Override
     public int popFront() {
-        return 0;
+        int[]copy = new int[array.length-2];
+        for (int i = 0; i < copy.length - 1; i++) {
+            copy[i] = array[i+1];
+        }
+        return array[0];
+
     }
 
     @Override
     public int popLast() {
-        return 0;
+        int[]copy = array;
+        return array[array.length-1];
+
     }
 
     @Override
