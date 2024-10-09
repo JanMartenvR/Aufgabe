@@ -38,6 +38,6 @@ public class Array implements IQueueList {
 
     @Override
     public int get(int i) {
-        return 0;
+        return array[i];
     }
 }
