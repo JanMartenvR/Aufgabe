@@ -28,12 +28,22 @@ public class Array implements IQueueList {
 
     @Override
     public int pushLast(int i) {
-        return 0;
+        int[]copy = new int[array.length];
+        for (int j = 0; i < copy.length - 2; j++) {
+            copy[i] = array[i];
+        }
+        copy[array.length] = i;
+        return i;
     }
 
     @Override
     public int pushFront(int i) {
-        return 0;
+        int[]copy = new int[array.length];
+        for (int j = 1; i < copy.length - 1; j++) {
+            copy[i] = array[i];
+        }
+        copy[0] = i;
+        return i;
     }
 
     @Override
