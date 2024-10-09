@@ -33,6 +33,7 @@ public class Array implements IQueueList {
             copy[i] = array[i];
         }
         copy[array.length] = i;
+        array = copy;
         return i;
     }
 
@@ -43,6 +44,7 @@ public class Array implements IQueueList {
             copy[i] = array[i];
         }
         copy[0] = i;
+        array = copy;
         return i;
     }
 
