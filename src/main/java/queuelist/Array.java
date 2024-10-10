@@ -1,13 +1,20 @@
 package queuelist;
 
 public class Array implements IQueueList {
-    public int[] array;
+    private int[] array;
 
     //Konstruktor
     public Array(int arrayLaenge) {
         this.array = new int[arrayLaenge];
     }
 
+    public int[] getArray() {
+        return array;
+    }
+
+    public void setArray(int[] array) {
+        this.array = array;
+    }
 
     @Override
     public int popFront() {
@@ -35,8 +42,8 @@ public class Array implements IQueueList {
     @Override
     public int pushLast(int i) {
         int[]copy = new int[array.length];
-        for (int j = 0; i < copy.length - 2; j++) {
-            copy[i] = array[i];
+        for (int j = 0; j < copy.length - 2; j++) {
+            copy[j] = array[j];
         }
         copy[array.length] = i;
         array = copy;
@@ -46,8 +53,8 @@ public class Array implements IQueueList {
     @Override
     public int pushFront(int i) {
         int[]copy = new int[array.length];
-        for (int j = 1; i < copy.length - 1; j++) {
-            copy[i] = array[i];
+        for (int j = 1; j < copy.length - 1; j++) {
+            copy[j] = array[j];
         }
         copy[0] = i;
         array = copy;
