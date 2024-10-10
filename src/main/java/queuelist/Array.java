@@ -3,11 +3,11 @@ package queuelist;
 public class Array implements IQueueList {
     public int[] array;
 
-    public Array getArray() {
-        Array array = new Array();
-        array.array = this.array;
-        return array;
+    //Konstruktor
+    public Array(int arrayLaenge) {
+        this.array = new int[arrayLaenge];
     }
+
 
     @Override
     public int popFront() {
