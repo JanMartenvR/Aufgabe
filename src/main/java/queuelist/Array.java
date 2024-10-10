@@ -2,62 +2,72 @@ package queuelist;
 
 public class Array implements IQueueList {
     private int[] array;
+    private int size;
 
     //Konstruktor
-    public Array(int arrayLaenge) {
-        this.array = new int[arrayLaenge];
+    public Array() {
+        this.array = new int[2];
+        this.size = 0;
     }
 
     public int[] getArray() {
         return array;
     }
 
-    public void setArray(int[] array) {
-        this.array = array;
+
+    private void resize(int newSize) {
+        int[] copy = new int[newSize];
+        System.arraycopy(array, 0, copy, 0, size);
+        array = copy;
     }
+    private boolean isEmpty() {
+        return size == 0;
+    }
+
 
     @Override
     public int popFront() {
-        int tmp = array[0];
-        int[] copy = new int[array.length - 2];
-        for (int i = 0; i < copy.length - 1; i++) {
-            copy[i] = array[i + 1];
+        if (isEmpty()) {
+            return -1;
         }
-        array = copy;
-        return tmp;
-
+        int i = array[0];
+        for (int j = 0; j < size - 1; j++) {
+            array[j] = array[j + 1];
+        }
+        size--;
+        return i;
     }
 
     @Override
     public int popLast() {
-        int tmp = array[array.length - 1];
-        int[] copy = new int[array.length - 2];
-        for (int i = 0; i < copy.length - 2; i++) {
-            copy[i] = array[i];
+        if (isEmpty()) {
+            return -1;
         }
-        array = copy;
-        return tmp;
+        int i = array[size - 1];
+        size--;
+        return i;
     }
 
     @Override
     public int pushLast(int i) {
-        int[]copy = new int[array.length];
-        for (int j = 0; j < copy.length - 2; j++) {
-            copy[j] = array[j];
+        if (size == array.length) {
+            resize(array.length + 2);
         }
-        copy[array.length] = i;
-        array = copy;
+        array[size] = i;
+        size++;
         return i;
     }
 
     @Override
     public int pushFront(int i) {
-        int[]copy = new int[array.length];
-        for (int j = 1; j < copy.length - 1; j++) {
-            copy[j] = array[j];
+        if (size == array.length) {
+            resize(array.length + 2);
         }
-        copy[0] = i;
-        array = copy;
+        for (int j = size; j > 0; j--) {
+            array[i] = array[i - 1];
+        }
+        array[0] = i;
+        size++;
         return i;
     }
 
