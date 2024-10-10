@@ -1,7 +1,13 @@
 package queuelist;
 
 public class Array implements IQueueList {
-    int[] array;
+    public int[] array;
+
+    public Array getArray() {
+        Array array = new Array();
+        array.array = this.array;
+        return array;
+    }
 
     @Override
     public int popFront() {
