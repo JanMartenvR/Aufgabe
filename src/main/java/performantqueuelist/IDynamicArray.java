@@ -5,5 +5,5 @@ public interface IDynamicArray {
     int popLast();
     int pushLast(int i);
     int pushFront(int i);
-    int get(int i);
+    int getValue(int i);
 }

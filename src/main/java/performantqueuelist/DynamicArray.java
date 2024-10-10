@@ -79,7 +79,7 @@ public class DynamicArray implements IDynamicArray{
     }
 
     @Override
-    public int get(int i) {
+    public int getValue(int i) {
         if (i < 0 || i >= size) {
             return -1;
         }
