@@ -51,7 +51,7 @@ public class Array implements IQueueList {
     @Override
     public int pushLast(int i) {
         if (size == array.length) {
-            resize(array.length + 2);
+            resize(array.length * 2);
         }
         array[size] = i;
         size++;
@@ -61,7 +61,7 @@ public class Array implements IQueueList {
     @Override
     public int pushFront(int i) {
         if (size == array.length) {
-            resize(array.length + 2);
+            resize(array.length * 2);
         }
         for (int j = size; j > 0; j--) {
             array[i] = array[i - 1];
@@ -73,6 +73,9 @@ public class Array implements IQueueList {
 
     @Override
     public int get(int i) {
+        if (i < 0 || i >= size) {
+            return -1;
+        }
         return array[i];
     }
 }
