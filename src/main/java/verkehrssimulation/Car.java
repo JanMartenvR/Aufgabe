@@ -35,7 +35,13 @@ public class Car {
         this.speed = speed;
     }
 
-    public void drive() {
+    public void increaseSpeed() {
+
+    }
+    public void decreaseSpeed() {
+
+    }
+    public void turn() {
 
     }
 }

@@ -11,5 +11,7 @@ public class Main {
         String content = Files.readString(path);
         System.out.println("Content: " + content);
 
+        //1 oben 2 recht
+
     }
 }

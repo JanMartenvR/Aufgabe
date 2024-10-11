@@ -11,6 +11,14 @@ public class Main {
 
 
         System.out.println(array.getValue(2));
+        array.pushFront(17);
+        System.out.println(array.getValue(0));
+        array.popFront();
+        System.out.println(array.getValue(0));
+        array.popLast();
+        System.out.println(array.getValue(1));
+        array.pushFront(9);
+        System.out.println(array.getValue(0));
 
         int[] test = array.getDynamicArray();
         for (int zahl : test) {
