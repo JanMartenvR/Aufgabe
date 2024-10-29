@@ -27,10 +27,12 @@ public class Start {
         Car auto2 = new Car(3, 2, 0,'w');
 
         auto1.changeSpeed(strassen);
+        int iterationen = 0;
+        do {
+            iterationen++;
 
-
-        //1 oben 2 recht
-
+        } while (auto1.getX() != auto2.getX() && auto1.getY() != auto2.getY());
+        System.out.println("Nach " + iterationen + "iterationen crashen die Autos.");
     }
 
     public static List<Road> strasseInit(String content) {
