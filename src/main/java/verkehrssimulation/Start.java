@@ -9,8 +9,8 @@ import java.util.List;
 
 public class Start {
 
-    // To DO: Rundung einbauen um festzustellen welches Straßenstück zählen soll
-    //        Kollisionskontrolle im Moment können die Autos durch die Kommazahlen aneinander vorbei fahren.
+    // To DO: Rundung einbauen, um festzustellen, welches Straßenstück zählen soll
+    //        Kollisionskontrolle im Moment können die Autos durch die Kommazahlen aneinander vorbeifahren.
     //        Daumenkino
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("Map.txt");
@@ -19,8 +19,8 @@ public class Start {
 
         List<Road> strassen = strasseInit(content);
 
-        Car auto1 = new Car(3, 2, 0,'o');
-        Car auto2 = new Car(3, 2, 0,'w');
+        Car auto1 = new Car(3, 2, 0, 'o');
+        Car auto2 = new Car(3, 2, 0, 'w');
 
         int iterationen = 0;
         do {
