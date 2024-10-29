@@ -26,6 +26,8 @@ public class Start {
         Car auto1 = new Car(3, 2, 0);
         Car auto2 = new Car(3, 2, 0);
 
+        auto1.changeSpeed(strassen);
+
 
         //1 oben 2 recht
 

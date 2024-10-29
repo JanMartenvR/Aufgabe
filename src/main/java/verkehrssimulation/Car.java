@@ -1,9 +1,11 @@
 package verkehrssimulation;
 
+import java.util.List;
+
 public class Car {
     private int x;
     private int y;
-    private int speed;
+    private float speed;
 
     public Car(int x, int y, int speed) {
         this.x = x;
@@ -27,18 +29,30 @@ public class Car {
         this.y = y;
     }
 
-    public int getSpeed() {
+    public float getSpeed() {
         return speed;
     }
 
-    public void setSpeed(int speed) {
+    public void setSpeed(float speed) {
         this.speed = speed;
     }
 
-    public void increaseSpeed() {
-
-    }
-    public void decreaseSpeed() {
+    public void changeSpeed(List<Road> strassen) {
+        for(Road road : strassen) {
+            if (road.positionX == this.x && road.positionY == this.y) {
+                if (!road.kurve && !road.kreuzung && this.speed < 1) {
+                    this.speed += 0.2F;
+                } else if (road.kurve) {
+                    this.speed /= 2;
+                    //Es fehlt noch die Situation, dass das Auto nicht nach einer Iteration aus der Kurve kommt. Dann darf nicht nochmal gebremst werden.
+                } else {
+                    if () {
+                        //Wenn das Auto durch eine Kreuzung geradeaus durchfährt, muss die Geschwindigkeit erhöht werden
+                        // Wenn das Auto abbiegt halbiert.
+                    }
+                }
+            }
+        }
 
     }
     public void turn() {
