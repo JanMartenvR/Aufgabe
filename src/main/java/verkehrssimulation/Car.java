@@ -49,8 +49,10 @@ public class Car {
     }
 
     public void move(List<Road> strassen) {
+        int x = Math.round(this.x);
+        int y = Math.round(this.y);
         for (Road road : strassen) {
-            if (road.positionX == this.x && road.positionY == this.y) {
+            if (road.positionX == x && road.positionY == y) {
                 if (Objects.equals(road.richtung, "wos")) {
                     if (this.direction == 'n') {
                         this.direction = 'o';
@@ -112,11 +114,11 @@ public class Car {
         }
     }
 
-
-    //Rundungen fehlen noch um festzustellen auf welcher Straße die Autos sind
     public void changeSpeed(List<Road> strassen) {
+        int x = Math.round(this.x);
+        int y = Math.round(this.y);
         for (Road road : strassen) {
-            if (road.positionX == this.x && road.positionY == this.y) {
+            if (road.positionX == x && road.positionY == y) {
                 if (!road.kurve && !road.kreuzung && this.speed < 1) {
                     this.speed += 0.2F;
                 } else if (road.kurve) {

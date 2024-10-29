@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Start {
 
-    // To DO: Rundung einbauen, um festzustellen, welches Straßenstück zählen soll
+    // To DO:
     //        Kollisionskontrolle im Moment können die Autos durch die Kommazahlen aneinander vorbeifahren.
     //        Daumenkino
     public static void main(String[] args) throws IOException {
@@ -31,7 +31,7 @@ public class Start {
             iterationen++;
 
         } while (auto1.getX() != auto2.getX() && auto1.getY() != auto2.getY());
-        System.out.println("Nach " + iterationen + "iterationen crashen die Autos.");
+        System.out.println("Nach " + iterationen + " Iterationen crashen die Autos.");
     }
 
     public static List<Road> strasseInit(String content) {
