@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Start {
+
+    // To DO: Rundung einbauen um festzustellen welches Straßenstück zählen soll
+    //        Kollisionskontrolle im Moment können die Autos durch die Kommazahlen aneinander vorbei fahren.
+    //        Daumenkino
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("Map.txt");
         String content = Files.readString(path);

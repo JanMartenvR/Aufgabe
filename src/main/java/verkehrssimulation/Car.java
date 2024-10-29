@@ -89,8 +89,23 @@ public class Car {
                 } else if (Objects.equals(road.richtung, "nw")) {
                     if (this.direction == 'o') {
                         this.direction = 'n';
+                        this.y -= this.speed;
                     } else if (this.direction == 's') {
                         this.direction = 'w';
+                        this.x -= this.speed;
+                    }
+                } else if (Objects.equals(road.richtung, "wo")) {
+                    if (this.direction == 'o') {
+                        this.x += this.speed;
+                    } else {
+                        this.x -= this.speed;
+                    }
+
+                } else if (Objects.equals(road.richtung, "ns")) {
+                    if (this.direction == 's') {
+                        this.y += this.speed;
+                    } else {
+                        this.y -= this.speed;
                     }
                 }
             }
