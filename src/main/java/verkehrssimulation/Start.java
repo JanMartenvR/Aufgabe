@@ -10,7 +10,7 @@ import java.util.List;
 public class Start {
 
     // To DO:
-    //        Kurvenlogik funktioniert noch nicht.
+    //        Kurvenlogik funktioniert noch nicht. Auto wird nicht schneller, weil es nicht direkt aus der Kurve kommt.
     //        Daumenkino
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("Map.txt");
@@ -32,8 +32,8 @@ public class Start {
             auto2.move(strassen);
             iterationen++;
             System.out.println(content);
-            System.out.println(Math.round(auto1.getX()) + "|" + Math.round(auto1.getY()));
-            System.out.println(Math.round(auto2.getX()) + "|" + Math.round(auto2.getY()));
+            System.out.println(Math.round(auto1.getX()) + "|" + Math.round(auto1.getY()) + "    " + auto1.getX() + "|" + auto1.getY());
+            System.out.println(Math.round(auto2.getX()) + "|" + Math.round(auto2.getY()) + "    " + auto2.getX() + "|" + auto2.getY());
 
         } while (!((Math.round(auto1.getX()) == Math.round(auto2.getX()) &&
                 Math.round(auto1.getY()) == Math.round(auto2.getY())) &&
