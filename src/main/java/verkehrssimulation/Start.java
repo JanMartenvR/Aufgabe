@@ -10,7 +10,7 @@ import java.util.List;
 public class Start {
 
     // To DO:
-    //        Kollisionskontrolle im Moment können die Autos durch die Kommazahlen aneinander vorbeifahren.
+    //        Kurvenlogik funktioniert noch nicht.
     //        Daumenkino
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("Map.txt");
@@ -23,14 +23,21 @@ public class Start {
         Car auto2 = new Car(3, 2, 0, 'w');
 
         int iterationen = 0;
+        boolean startBedingung = (Math.round(auto1.getX()) == 3 && Math.round(auto1.getY()) == 2) &&
+                (Math.round(auto2.getX()) == 3 && Math.round(auto2.getY()) == 2);
         do {
             auto1.changeSpeed(strassen);
             auto2.changeSpeed(strassen);
             auto1.move(strassen);
             auto2.move(strassen);
             iterationen++;
+            System.out.println(content);
+            System.out.println(Math.round(auto1.getX()) + "|" + Math.round(auto1.getY()));
+            System.out.println(Math.round(auto2.getX()) + "|" + Math.round(auto2.getY()));
 
-        } while (auto1.getX() != auto2.getX() && auto1.getY() != auto2.getY());
+        } while (!((Math.round(auto1.getX()) == Math.round(auto2.getX()) &&
+                Math.round(auto1.getY()) == Math.round(auto2.getY())) &&
+                (Math.round(auto1.getX()) != 3 || Math.round(auto1.getY()) != 2)));
         System.out.println("Nach " + iterationen + " Iterationen crashen die Autos.");
     }
 
