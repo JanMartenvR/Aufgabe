@@ -15,20 +15,15 @@ public class Start {
 
         List<Road> strassen = strasseInit(content);
 
-        for (Road test : strassen) {
-
-            int x = test.getPositionX();
-            int y = test.getPositionY();
-            System.out.println("(" + x + "|" + y + ")");
-        }
-
-
         Car auto1 = new Car(3, 2, 0,'o');
         Car auto2 = new Car(3, 2, 0,'w');
 
-        auto1.changeSpeed(strassen);
         int iterationen = 0;
         do {
+            auto1.changeSpeed(strassen);
+            auto2.changeSpeed(strassen);
+            auto1.move(strassen);
+            auto2.move(strassen);
             iterationen++;
 
         } while (auto1.getX() != auto2.getX() && auto1.getY() != auto2.getY());
