@@ -1,14 +1,15 @@
 package verkehrssimulation;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Car {
-    private int x;
-    private int y;
+    private float x;
+    private float y;
     private float speed;
     private char direction;
 
-    public Car(int x, int y, float speed, char direction) {
+    public Car(float x, float y, float speed, char direction) {
         this.x = x;
         this.y = y;
         this.speed = speed;
@@ -23,19 +24,19 @@ public class Car {
         this.direction = direction;
     }
 
-    public int getX() {
+    public float getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(float x) {
         this.x = x;
     }
 
-    public int getY() {
+    public float getY() {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(float y) {
         this.y = y;
     }
 
@@ -47,6 +48,8 @@ public class Car {
         this.speed = speed;
     }
 
+
+    //Rundungen fehlen noch um festzustellen auf welcher Straße die Autos sind
     public void changeSpeed(List<Road> strassen) {
         for(Road road : strassen) {
             if (road.positionX == this.x && road.positionY == this.y) {
@@ -59,16 +62,62 @@ public class Car {
                     }
                     //Es fehlt noch die Situation, dass das Auto nicht nach einer Iteration aus der Kurve kommt. Dann darf nicht nochmal gebremst werden.
                 } else {
-                    if () {
-                        //Wenn das Auto durch eine Kreuzung geradeaus durchfährt, muss die Geschwindigkeit erhöht werden
-                        // Wenn das Auto abbiegt halbiert.
+
+                    if (Objects.equals(road.richtung, "wos")) {
+                        if (this.direction == 'n') {
+                            this.direction = 'o';
+                            this.speed /= 2;
+                            if (this.speed < 0.1) {
+                                this.speed = 0.1F;
+                            }
+                        } else if (this.direction == 'o') {
+                            this.speed += 0.2F;
+                        } else if (this.direction == 'w') {
+                            this.speed += 0.2F;
+                        }
+
                     }
+
                 }
             }
         }
 
     }
-    public void turn() {
+    public void changeDirection(List<Road> strassen) {
+        for(Road road : strassen) {
+            if (road.positionX == this.x && road.positionY == this.y) {
+                if (Objects.equals(road.richtung, "wos")) {
+                    if (this.direction == 'n') {
+                        this.direction = 'o';
+                    } 
 
+                } else if (Objects.equals(road.richtung, "os")) {
+                    if (this.direction == 'n') {
+                        this.direction = 'o';
+                    } else if (this.direction == 'w') {
+                        this.direction = 's';
+                    }
+
+                } else if (Objects.equals(road.richtung, "ws")) {
+                    if (this.direction == 'n') {
+                        this.direction = 'w';
+                    } else if (this.direction == 'o') {
+                        this.direction = 's';                        
+                    }
+                } else if (Objects.equals(road.richtung, "no")) {
+                    if (this.direction == 's') {
+                        this.direction = 'o';
+                    } else if (this.direction == 'w') {
+                        this.direction = 'n';
+                    }
+                } else if (Objects.equals(road.richtung, "nw")) {
+                    if (this.direction == 'o') {
+                        this.direction = 'n';
+                    } else if (this.direction == 's') {
+                        this.direction = 'w';
+                    }
+                }
+            }
+        }
     }
 }

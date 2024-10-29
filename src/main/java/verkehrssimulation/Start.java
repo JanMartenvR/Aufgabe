@@ -43,7 +43,7 @@ public class Start {
                 boolean start = false;
                 boolean kurve = true;
                 boolean kreuzung = false;
-                String richtung = "so";
+                String richtung = "os";
                 Road road = new Road(start, kurve, kreuzung, richtung, x, j);
                 strassen.add(road);
                 x++;
@@ -95,7 +95,7 @@ public class Start {
                 boolean start = false;
                 boolean kurve = true;
                 boolean kreuzung = false;
-                String richtung = "wo";
+                String richtung = "nw";
                 Road road = new Road(start, kurve, kreuzung, richtung, x, j);
                 strassen.add(road);
                 x++;
