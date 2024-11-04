@@ -6,9 +6,9 @@ import java.util.List;
 public class Start {
 
     // To DO:
-    //        Kurvenlogik funktioniert noch nicht. Auto wird nicht schneller, weil es nicht direkt aus der Kurve kommt.
     //        Daumenkino
     //        Simulations Klasse und dort die Initialisierung einbauen
+    //        Restliche möglich Symbolik für andere Straßentopologien einbauen
     public static void main(String[] args) {
 
 

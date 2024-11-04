@@ -140,9 +140,6 @@ public class Car {
                     if (this.speed < 0.1) {
                         this.speed = 0.1F;
                     }
-                    //Enums
-                    //boolean für eintritt in kurve?
-                    //Es fehlt noch die Situation, dass das Auto nicht nach einer Iteration aus der Kurve kommt. Dann darf nicht nochmal gebremst werden.
                 } else if (road.curve && this.inCurve) {
                     this.speed += 0.2F;
                     if (this.speed > 1) {
