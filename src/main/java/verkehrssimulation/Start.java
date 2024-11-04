@@ -12,24 +12,31 @@ public class Start {
     // To DO:
     //        Kurvenlogik funktioniert noch nicht. Auto wird nicht schneller, weil es nicht direkt aus der Kurve kommt.
     //        Daumenkino
-    public static void main(String[] args) throws IOException {
+    //        Simulations Klasse und dort die Initialisierung einbauen
+    //        Einlesen der Map in Klasse
+    //        Deutsch/Englische Variablen
+    public static void main(String[] args) {
         Path path = Paths.get("Map.txt");
-        String content = Files.readString(path);
+        String content = null;
+        try {
+            content = Files.readString(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println(content);
 
-        List<Road> strassen = strasseInit(content);
+        List<Road> roads = roadInit(content);
 
         Car auto1 = new Car(3, 2, 0, 'o');
         Car auto2 = new Car(3, 2, 0, 'w');
 
         int iterationen = 0;
-        boolean startBedingung = (Math.round(auto1.getX()) == 3 && Math.round(auto1.getY()) == 2) &&
-                (Math.round(auto2.getX()) == 3 && Math.round(auto2.getY()) == 2);
+
         do {
-            auto1.changeSpeed(strassen);
-            auto2.changeSpeed(strassen);
-            auto1.move(strassen);
-            auto2.move(strassen);
+            auto1.changeSpeed(roads);
+            auto2.changeSpeed(roads);
+            auto1.move(roads);
+            auto2.move(roads);
             iterationen++;
             System.out.println(content);
             System.out.println(Math.round(auto1.getX()) + "|" + Math.round(auto1.getY()) + "    " + auto1.getX() + "|" + auto1.getY());
@@ -41,80 +48,80 @@ public class Start {
         System.out.println("Nach " + iterationen + " Iterationen crashen die Autos.");
     }
 
-    public static List<Road> strasseInit(String content) {
+    public static List<Road> roadInit(String content) {
         int i;
         int x = 0;
         int j = 0;
-        List<Road> strassen = new ArrayList<>();
+        List<Road> roads = new ArrayList<>();
         for (i = 0; i < content.length(); i++) {
             if (content.charAt(i) == '┌') {
                 boolean start = false;
-                boolean kurve = true;
-                boolean kreuzung = false;
-                String richtung = "os";
-                Road road = new Road(start, kurve, kreuzung, richtung, x, j);
-                strassen.add(road);
+                boolean curve = true;
+                boolean intersection = false;
+                String direction = "os";
+                Road road = new Road(start, curve, intersection, direction, x, j);
+                roads.add(road);
                 x++;
             } else if (content.charAt(i) == '─') {
                 boolean start = false;
-                boolean kurve = false;
-                boolean kreuzung = false;
-                String richtung = "wo";
-                Road road = new Road(start, kurve, kreuzung, richtung, x, j);
-                strassen.add(road);
+                boolean curve = false;
+                boolean intersection = false;
+                String direction = "wo";
+                Road road = new Road(start, curve, intersection, direction, x, j);
+                roads.add(road);
                 x++;
             } else if (content.charAt(i) == '┬') {
                 boolean start = false;
-                boolean kurve = false;
-                boolean kreuzung = true;
-                String richtung = "wos";
-                Road road = new Road(start, kurve, kreuzung, richtung, x, j);
-                strassen.add(road);
+                boolean curve = false;
+                boolean intersection = true;
+                String direction = "wos";
+                Road road = new Road(start, curve, intersection, direction, x, j);
+                roads.add(road);
                 x++;
 
             } else if (content.charAt(i) == '┐') {
                 boolean start = false;
-                boolean kurve = true;
-                boolean kreuzung = false;
-                String richtung = "ws";
-                Road road = new Road(start, kurve, kreuzung, richtung, x, j);
-                strassen.add(road);
+                boolean curve = true;
+                boolean intersection = false;
+                String direction = "ws";
+                Road road = new Road(start, curve, intersection, direction, x, j);
+                roads.add(road);
                 x++;
 
             } else if (content.charAt(i) == '│') {
                 boolean start = false;
-                boolean kurve = false;
-                boolean kreuzung = false;
-                String richtung = "ns";
-                Road road = new Road(start, kurve, kreuzung, richtung, x, j);
-                strassen.add(road);
+                boolean curve = false;
+                boolean intersection = false;
+                String direction = "ns";
+                Road road = new Road(start, curve, intersection, direction, x, j);
+                roads.add(road);
                 x++;
 
             } else if (content.charAt(i) == '└') {
                 boolean start = false;
-                boolean kurve = true;
-                boolean kreuzung = false;
-                String richtung = "no";
-                Road road = new Road(start, kurve, kreuzung, richtung, x, j);
-                strassen.add(road);
+                boolean curve = true;
+                boolean intersection = false;
+                String direction = "no";
+                Road road = new Road(start, curve, intersection, direction, x, j);
+                roads.add(road);
                 x++;
 
             } else if (content.charAt(i) == '┘') {
                 boolean start = false;
-                boolean kurve = true;
-                boolean kreuzung = false;
-                String richtung = "nw";
-                Road road = new Road(start, kurve, kreuzung, richtung, x, j);
-                strassen.add(road);
+                boolean curve = true;
+                boolean intersection = false;
+                String direction = "nw";
+                Road road = new Road(start, curve, intersection, direction, x, j);
+                roads.add(road);
                 x++;
 
             } else if (content.charAt(i) == '╫') {
                 boolean start = true;
-                boolean kurve = false;
-                boolean kreuzung = false;
-                String richtung = "wo";
-                Road road = new Road(start, kurve, kreuzung, richtung, x, j);
-                strassen.add(road);
+                boolean curve = false;
+                boolean intersection = false;
+                String direction = "wo";
+                Road road = new Road(start, curve, intersection, direction, x, j);
+                roads.add(road);
                 x++;
 
             } else if (content.charAt(i) == ' ') {
@@ -124,7 +131,7 @@ public class Start {
                 x = 0;
             }
         }
-        return strassen;
+        return roads;
 
     }
 }

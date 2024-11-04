@@ -2,9 +2,9 @@ package verkehrssimulation;
 
 public class Road {
     boolean start;
-    boolean kurve;
-    boolean kreuzung;
-    String richtung;
+    boolean curve;
+    boolean intersection;
+    String direction;
     int positionX;
     int positionY;
 
@@ -12,16 +12,16 @@ public class Road {
         return start;
     }
 
-    public boolean isKurve() {
-        return kurve;
+    public boolean isCurve() {
+        return curve;
     }
 
-    public boolean isKreuzung() {
-        return kreuzung;
+    public boolean isIntersection() {
+        return intersection;
     }
 
-    public String getRichtung() {
-        return richtung;
+    public String getDirection() {
+        return direction;
     }
 
     public int getPositionX() {
@@ -32,11 +32,11 @@ public class Road {
         return positionY;
     }
 
-    public Road(boolean start, boolean kurve, boolean kreuzung, String richtung, int positionX, int positionY) {
+    public Road(boolean start, boolean curve, boolean intersection, String direction, int positionX, int positionY) {
         this.start = start;
-        this.kurve = kurve;
-        this.kreuzung = kreuzung;
-        this.richtung = richtung;
+        this.curve = curve;
+        this.intersection = intersection;
+        this.direction = direction;
         this.positionX = positionX;
         this.positionY = positionY;
     }

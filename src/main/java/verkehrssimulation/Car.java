@@ -53,7 +53,7 @@ public class Car {
         int y = Math.round(this.y);
         for (Road road : strassen) {
             if (road.positionX == x && road.positionY == y) {
-                if (Objects.equals(road.richtung, "wos")) {
+                if (Objects.equals(road.direction, "wos")) {
                     if (this.direction == 'n') {
                         this.direction = 'o';
                         this.x += this.speed;
@@ -63,7 +63,7 @@ public class Car {
                         this.x -= this.speed;
                     }
 
-                } else if (Objects.equals(road.richtung, "os")) {
+                } else if (Objects.equals(road.direction, "os")) {
                     if (this.direction == 'n') {
                         this.direction = 'o';
                         this.x += this.speed;
@@ -72,7 +72,7 @@ public class Car {
                         this.y += this.speed;
                     }
 
-                } else if (Objects.equals(road.richtung, "ws")) {
+                } else if (Objects.equals(road.direction, "ws")) {
                     if (this.direction == 'n') {
                         this.direction = 'w';
                         this.x -= this.speed;
@@ -80,7 +80,7 @@ public class Car {
                         this.direction = 's';
                         this.y += this.speed;
                     }
-                } else if (Objects.equals(road.richtung, "no")) {
+                } else if (Objects.equals(road.direction, "no")) {
                     if (this.direction == 's') {
                         this.direction = 'o';
                         this.x += this.speed;
@@ -88,7 +88,7 @@ public class Car {
                         this.direction = 'n';
                         this.y -= this.speed;
                     }
-                } else if (Objects.equals(road.richtung, "nw")) {
+                } else if (Objects.equals(road.direction, "nw")) {
                     if (this.direction == 'o') {
                         this.direction = 'n';
                         this.y -= this.speed;
@@ -96,14 +96,14 @@ public class Car {
                         this.direction = 'w';
                         this.x -= this.speed;
                     }
-                } else if (Objects.equals(road.richtung, "wo")) {
+                } else if (Objects.equals(road.direction, "wo")) {
                     if (this.direction == 'o') {
                         this.x += this.speed;
                     } else {
                         this.x -= this.speed;
                     }
 
-                } else if (Objects.equals(road.richtung, "ns")) {
+                } else if (Objects.equals(road.direction, "ns")) {
                     if (this.direction == 's') {
                         this.y += this.speed;
                     } else {
@@ -114,22 +114,24 @@ public class Car {
         }
     }
 
-    public void changeSpeed(List<Road> strassen) {
+    public void changeSpeed(List<Road> roads) {
         int x = Math.round(this.x);
         int y = Math.round(this.y);
-        for (Road road : strassen) {
+        for (Road road : roads) {
             if (road.positionX == x && road.positionY == y) {
-                if (!road.kurve && !road.kreuzung && this.speed < 1) {
+                if (!road.curve && !road.intersection && this.speed < 1) {
                     this.speed += 0.2F;
-                } else if (road.kurve) {
+                } else if (road.curve) {
                     this.speed /= 2;
                     if (this.speed < 0.1) {
                         this.speed = 0.1F;
                     }
+                    //Enums
+                    //boolean für eintritt in kurve
                     //Es fehlt noch die Situation, dass das Auto nicht nach einer Iteration aus der Kurve kommt. Dann darf nicht nochmal gebremst werden.
                 } else {
 
-                    if (Objects.equals(road.richtung, "wos")) {
+                    if (Objects.equals(road.direction, "wos")) {
                         if (this.direction == 'n') {
                             this.direction = 'o';
                             this.speed /= 2;
