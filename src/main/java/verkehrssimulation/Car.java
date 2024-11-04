@@ -73,35 +73,35 @@ public class Car {
                     }
 
                 } else if (Objects.equals(road.direction, "os")) {
-                    if (this.direction == 'n') {
+                    if (this.direction == 'n' || this.direction == 'o') {
                         this.direction = 'o';
                         this.x += this.speed;
-                    } else if (this.direction == 'w') {
+                    } else if (this.direction == 'w' || this.direction == 's') {
                         this.direction = 's';
                         this.y += this.speed;
                     }
 
                 } else if (Objects.equals(road.direction, "ws")) {
-                    if (this.direction == 'n') {
+                    if (this.direction == 'n' || this.direction == 'w') {
                         this.direction = 'w';
                         this.x -= this.speed;
-                    } else if (this.direction == 'o') {
+                    } else if (this.direction == 'o' || this.direction == 's') {
                         this.direction = 's';
                         this.y += this.speed;
                     }
                 } else if (Objects.equals(road.direction, "no")) {
-                    if (this.direction == 's') {
+                    if (this.direction == 's' || this.direction == 'o') {
                         this.direction = 'o';
                         this.x += this.speed;
-                    } else if (this.direction == 'w') {
+                    } else if (this.direction == 'w' || this.direction == 'n') {
                         this.direction = 'n';
                         this.y -= this.speed;
                     }
                 } else if (Objects.equals(road.direction, "nw")) {
-                    if (this.direction == 'o') {
+                    if (this.direction == 'o' || this.direction == 'n') {
                         this.direction = 'n';
                         this.y -= this.speed;
-                    } else if (this.direction == 's') {
+                    } else if (this.direction == 's' || this.direction == 'w') {
                         this.direction = 'w';
                         this.x -= this.speed;
                     }

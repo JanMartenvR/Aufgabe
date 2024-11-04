@@ -30,7 +30,8 @@ public class Start {
             System.out.println(Simulation.map());
             System.out.println(Math.round(auto1.getX()) + "|" + Math.round(auto1.getY()) + "    " + auto1.getX() + "|" + auto1.getY());
             System.out.println(Math.round(auto2.getX()) + "|" + Math.round(auto2.getY()) + "    " + auto2.getX() + "|" + auto2.getY());
-
+            System.out.println(auto1.getSpeed());
+            System.out.println(auto2.getSpeed());
         } while (!((Math.round(auto1.getX()) == Math.round(auto2.getX()) &&
                 Math.round(auto1.getY()) == Math.round(auto2.getY())) &&
                 (Math.round(auto1.getX()) != 3 || Math.round(auto1.getY()) != 2)));
