@@ -1,9 +1,5 @@
 package verkehrssimulation;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,19 +9,12 @@ public class Start {
     //        Kurvenlogik funktioniert noch nicht. Auto wird nicht schneller, weil es nicht direkt aus der Kurve kommt.
     //        Daumenkino
     //        Simulations Klasse und dort die Initialisierung einbauen
-    //        Einlesen der Map in Klasse
-    //        Deutsch/Englische Variablen
     public static void main(String[] args) {
-        Path path = Paths.get("Map.txt");
-        String content = null;
-        try {
-            content = Files.readString(path);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println(content);
 
-        List<Road> roads = roadInit(content);
+
+        System.out.println(Simulation.map());
+
+        List<Road> roads = roadInit(Simulation.map());
 
         Car auto1 = new Car(3, 2, 0, 'o');
         Car auto2 = new Car(3, 2, 0, 'w');
@@ -38,7 +27,7 @@ public class Start {
             auto1.move(roads);
             auto2.move(roads);
             iterationen++;
-            System.out.println(content);
+            System.out.println(Simulation.map());
             System.out.println(Math.round(auto1.getX()) + "|" + Math.round(auto1.getY()) + "    " + auto1.getX() + "|" + auto1.getY());
             System.out.println(Math.round(auto2.getX()) + "|" + Math.round(auto2.getY()) + "    " + auto2.getX() + "|" + auto2.getY());
 
