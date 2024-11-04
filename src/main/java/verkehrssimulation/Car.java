@@ -8,12 +8,21 @@ public class Car {
     private float y;
     private float speed;
     private char direction;
+    private boolean inCurve;
 
     public Car(float x, float y, float speed, char direction) {
         this.x = x;
         this.y = y;
         this.speed = speed;
         this.direction = direction;
+    }
+
+    public boolean isInCurve() {
+        return inCurve;
+    }
+
+    public void setInCurve(boolean inCurve) {
+        this.inCurve = inCurve;
     }
 
     public char getDirection() {
@@ -120,15 +129,25 @@ public class Car {
         for (Road road : roads) {
             if (road.positionX == x && road.positionY == y) {
                 if (!road.curve && !road.intersection && this.speed < 1) {
+                    this.inCurve = false;
                     this.speed += 0.2F;
-                } else if (road.curve) {
+                    if (this.speed > 1) {
+                        this.speed = 1;
+                    }
+                } else if (road.curve && !this.inCurve) {
                     this.speed /= 2;
+                    this.inCurve = true;
                     if (this.speed < 0.1) {
                         this.speed = 0.1F;
                     }
                     //Enums
-                    //boolean für eintritt in kurve
+                    //boolean für eintritt in kurve?
                     //Es fehlt noch die Situation, dass das Auto nicht nach einer Iteration aus der Kurve kommt. Dann darf nicht nochmal gebremst werden.
+                } else if (road.curve && this.inCurve) {
+                    this.speed += 0.2F;
+                    if (this.speed > 1) {
+                        this.speed = 1;
+                    }
                 } else {
 
                     if (Objects.equals(road.direction, "wos")) {
@@ -140,8 +159,15 @@ public class Car {
                             }
                         } else if (this.direction == 'o') {
                             this.speed += 0.2F;
+                            if (this.speed > 1) {
+                                this.speed = 1;
+                            }
+
                         } else if (this.direction == 'w') {
                             this.speed += 0.2F;
+                            if (this.speed > 1) {
+                                this.speed = 1;
+                            }
                         }
 
                     }
