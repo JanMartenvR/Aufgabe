@@ -9,12 +9,14 @@ public class Start {
     //        Daumenkino
     //        Simulations Klasse und dort die Initialisierung einbauen
     //        Restliche möglich Symbolik für andere Straßentopologien einbauen
+    //        Start boolean nutzen für Schleifenlogik
     public static void main(String[] args) {
 
 
-        System.out.println(Simulation.map());
+        String map = Simulation.map();
+        System.out.println(map);
 
-        List<Road> roads = roadInit(Simulation.map());
+        List<Road> roads = roadInit(map);
 
         Car auto1 = new Car(3, 2, 0, 'o');
         Car auto2 = new Car(3, 2, 0, 'w');
@@ -27,7 +29,7 @@ public class Start {
             auto1.move(roads);
             auto2.move(roads);
             iterationen++;
-            System.out.println(Simulation.map());
+            System.out.println(map);
             System.out.println(Math.round(auto1.getX()) + "|" + Math.round(auto1.getY()) + "    " + auto1.getX() + "|" + auto1.getY());
             System.out.println(Math.round(auto2.getX()) + "|" + Math.round(auto2.getY()) + "    " + auto2.getX() + "|" + auto2.getY());
             System.out.println(auto1.getSpeed());
