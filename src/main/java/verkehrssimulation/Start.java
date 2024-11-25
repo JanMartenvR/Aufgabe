@@ -9,7 +9,9 @@ public class Start {
     //        Daumenkino
     //        Simulations Klasse und dort die Initialisierung einbauen
     //        Restliche möglich Symbolik für andere Straßentopologien einbauen
-    //        Start boolean nutzen für Schleifenlogik
+    //        Start boolean nutzen für Schleifenlogik iteration
+    // Klasse für koordinaten
+    // roads unterklassen
     public static void main(String[] args) {
 
 

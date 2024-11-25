@@ -10,7 +10,9 @@ public class ListTest {
         intList.add(5);
         intList.add(12);
         intList.add(23);
+        intList.add(17);
 
+        // forEach Methode der Listen Klasse von Java arbeitet mit einem functional Interface -> Lambdas bieten sich an
         intList.forEach(System.out::println);
 
     }

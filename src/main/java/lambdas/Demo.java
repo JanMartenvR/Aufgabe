@@ -1,18 +1,39 @@
 package lambdas;
 
+import java.util.concurrent.Flow;
+import java.util.function.BinaryOperator;
+
 public class Demo {
     public static void main(String[] args) {
 
 
-        //Eine Klasse erstellt für das Interface wichtig: Nur bei einer Methode im Interface, also einem Functional Interfac möglich
-        ILebewesen benjamin = new ILebewesen() {
-            @Override
-            public void macheEtwas() {
-                System.out.println("Töröö");
 
-            }
-        };
-        benjamin.macheEtwas();
+
+
+
+        ILebewesen benjamin = test -> System.out.println(test + " Töröö");
+        benjamin.macheEtwas("Was geht ab?");
+
+
+
+        //ILebewesen benjamin = (vor, nach) -> {return vor +"Töröö" + nach;};
+
+
+
+
+
+        //ILebewesen benjamin = new ILebewesen() {
+
+            //public void macheEtwas() {
+                //System.out.println("Töröö");
+
+            //}
+        //};
+        //benjamin.macheEtwas();
+
+
+
+        //Eine Klasse erstellt für das Interface wichtig: Nur bei einer Methode im Interface, also einem Functional Interfac möglich
 
         //Gleicher Ausdruck in Lambdas
 
@@ -29,5 +50,8 @@ public class Demo {
         //System.put.println(s);
 
 
+    }
+    public static void rufeMethodeAuf(ILebewesen lebewesen) {
+        lebewesen.macheEtwas("Das Lebewesen sagt: ");
     }
 }
